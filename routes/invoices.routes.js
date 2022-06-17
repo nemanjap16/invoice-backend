@@ -1,29 +1,26 @@
 const router = require("express").Router();
+const {
+  getInvoices,
+  getInvoice,
+  postInvoice,
+  putInvoice,
+  deleteInvoice,
+} = require("../controllers/invoice.controllers");
 
 // GET all invoices
-router.get("/", (req, res) => {
-  res.json({ message: "Get all invoices" });
-});
+router.get("/", getInvoices);
 
 // GET one invoice
-router.get("/:id", (req, res) => {
-  res.json({ message: "Get one invoice" });
-});
+router.get("/:id", getInvoice);
 
 // POST one invoice
-router.post("/", (req, res) => {
-  res.json({ message: "Post one invoice" });
-});
+router.post("/", postInvoice);
 
 // PUT one invoice
-router.put("/:id", (req, res) => {
-  res.json({ message: "Put one invoice" });
-});
+router.put("/:id", putInvoice);
 
 // DELETE one invoice
-router.delete("/:id", (req, res) => {
-  res.json({ message: "Delete one invoice" });
-});
+router.delete("/:id", deleteInvoice);
 
 // GET all invoices by user
 
