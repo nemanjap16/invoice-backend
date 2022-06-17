@@ -13,7 +13,7 @@ colors.enable();
 // middleware
 app.use(express.json());
 app.use(cors());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 // log middleware
 app.use((req, res, next) => {
   console.log(req.method, req.path);
