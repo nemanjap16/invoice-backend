@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 // invoices routes
-app.use(invoicesRoutes);
+app.use("/api/invoices", invoicesRoutes);
 
 const PORT = process.env.PORT || 5000;
 
