@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const {
   getInvoices,
-  getInvoice,
+  getInvoiceByID,
   postInvoice,
   putInvoice,
   deleteInvoice,
@@ -11,7 +11,7 @@ const {
 router.get("/", getInvoices);
 
 // GET one invoice
-router.get("/:id", getInvoice);
+router.get("/:id", getInvoiceByID);
 
 // POST one invoice
 router.post("/", postInvoice);

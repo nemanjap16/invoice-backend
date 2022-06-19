@@ -11,7 +11,7 @@ const getInvoices = async (req, res) => {
 };
 
 // get one invoice by id
-const getInvoice = async (req, res) => {
+const getInvoiceByID = async (req, res) => {
   try {
     const invoice = await Invoice.findById(req.params.id);
     res.status(200).json(invoice);
@@ -55,7 +55,7 @@ const deleteInvoice = async (req, res) => {
 
 module.exports = {
   getInvoices,
-  getInvoice,
+  getInvoiceByID,
   postInvoice,
   putInvoice,
   deleteInvoice,
