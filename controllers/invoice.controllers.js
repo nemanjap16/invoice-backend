@@ -1,4 +1,4 @@
-const Invoice = require("../models/Invoice.model");
+const Invoice = require("../models/Invoice.model.js");
 
 // get all invoices
 const getInvoices = async (req, res) => {
