@@ -3,7 +3,7 @@ const cors = require("cors");
 const colors = require("colors");
 const { dbConnect } = require("./config/db.connect");
 
-const invoicesRoutes = require("./routes/invoices.routes");
+const invoicesRoutes = require("./routes/invoices");
 require("dotenv").config();
 
 const app = express();
