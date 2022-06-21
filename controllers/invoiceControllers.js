@@ -1,4 +1,5 @@
 const Invoice = require("../models/InvoiceModel");
+const mongoose = require("mongoose");
 
 // get all invoices
 const getInvoices = async (req, res) => {
@@ -12,8 +13,19 @@ const getInvoices = async (req, res) => {
 
 // get one invoice by id
 const getInvoiceByID = async (req, res) => {
+  // check if id is valid
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    return res
+      .status(400)
+      .json({ message: "Specified id is not valid. Provide valid _id" });
+  }
+
   try {
     const invoice = await Invoice.findById(req.params.id);
+    // check if invoice exists
+    if (!invoice) {
+      return res.status(404).json({ message: "Invoice not found" });
+    }
     res.status(200).json(invoice);
   } catch (error) {
     res.status(500).json({ message: error.message });
